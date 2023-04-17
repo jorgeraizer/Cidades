@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidades</title>
+</head>
+<body>
+
+    População de A: <input size="6" type="text" id="PA" value="100000"> (2% ao ano)
+    <br> <br>
+    População de B: <input size="6" type="text" id="PB" value="270000"> (0.4% ao ano)
+    <br> <br>
+    <button onclick="Calcular();">CALCULAR</button>
+    <br>
+    A população de A ultrapassará B em <span id="resultado"> __ </span> anos.
+
+</body>
+<script>
+    function Calcular()
+    {
+            A = parseInt(PA.value)
+            B = parseInt(PB.value)
+            anos = 0
+            while (A < B)
+            {
+                A = A + (0.02*A)
+                B = B + (0.004*B)
+                anos = anos + 1
+            }
+            resultado.innerHTML = anos
+    }
+</script>
+</html>
